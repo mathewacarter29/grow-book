@@ -1,0 +1,31 @@
+/**
+ * index.css
+ *
+ * Global stylesheet for Kelsi's Grow Book.
+ * Imports the Instrument Serif font from Google Fonts and applies
+ * a minimal CSS reset so browser defaults don't interfere with the design.
+ * The font-family is set on the html/body element so every text node
+ * inherits it automatically — individual components don't need to
+ * re-declare it unless they override it intentionally.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Instrument Serif', serif;
+  /* Prevent horizontal scrollbar caused by full-bleed backgrounds */
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+}
