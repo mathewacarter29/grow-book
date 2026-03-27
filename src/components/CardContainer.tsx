@@ -23,13 +23,15 @@ const CardContainer: React.FC<CardContainerProps> = ({ plants }) => {
       {/*
        * Inline <style> injects the responsive grid rule.
        * We use a CSS custom property approach so the grid auto-fills
-       * columns that are at least 220px wide — matching each PlantCard's
+       * columns that are at least 300px wide — matching each PlantCard's
        * width — and collapses to a single column on narrow viewports.
        */}
       <style>{`
         .card-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+          justify-content: space-around;
+          place-items: center;
           gap: ${spacing.cardGap};
         }
 
@@ -45,7 +47,6 @@ const CardContainer: React.FC<CardContainerProps> = ({ plants }) => {
           backgroundColor: colors.cardContainerBackground,
           borderRadius: borderRadius.cardContainer,
           padding: spacing.containerPadding,
-          width: "100%",
           boxSizing: "border-box",
           /* Allow the container itself to scroll vertically on mobile
              if the viewport is shorter than the card list */

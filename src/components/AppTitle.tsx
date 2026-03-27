@@ -8,6 +8,7 @@
 
 import React from "react";
 import { colors, typography } from "../theme/theme";
+import vine from '../assets/vine.png';
 
 const AppTitle: React.FC = () => {
   return (
@@ -34,6 +35,7 @@ const AppTitle: React.FC = () => {
       >
         Kelsi's Grow Book
       </h1>
+      <img src={vine} alt="line break" />
     </header>
   );
 };

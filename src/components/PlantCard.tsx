@@ -28,7 +28,7 @@ const PlantCard: React.FC<PlantCardProps> = ({ plant }) => {
     flexDirection: "column",
     /* Fixed width so all cards are uniform; on mobile the container
        switches to a single-column layout via CSS in CardContainer */
-    width: "220px",
+    width: "300px",
     flexShrink: 0,
     boxSizing: "border-box",
   };
