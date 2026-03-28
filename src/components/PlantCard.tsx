@@ -35,10 +35,7 @@ const PlantCard: React.FC<PlantCardProps> = ({ plant }) => {
 
   return (
     <div style={cardStyle}>
-      <PlantImage
-        fullyGrownPicture={plant.fullyGrownPicture}
-        plantName={plant.name}
-      />
+      <PlantImage plant={plant} />
       <PlantCardInfo plant={plant} />
     </div>
   );

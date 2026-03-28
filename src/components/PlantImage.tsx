@@ -2,25 +2,24 @@
  * PlantImage.tsx
  *
  * Renders the image section at the top of a plant card.
- * If a fully-grown picture URL is provided it renders the image;
- * otherwise it renders a white placeholder rectangle — matching
- * the blank-photo aesthetic shown in the Figma design.
+ * Delegates image selection entirely to getGrowthStageImage(), which
+ * maps the plant's current age to one of the six stage PNGs (or to
+ * the fullyGrownPicture once the plant has matured).
  */
 
 import React from "react";
 import { colors, borderRadius } from "../theme/theme";
+import { type Plant } from "../types/types";
+import { getGrowthStageImage } from "../utils/plantUtils";
 
 interface PlantImageProps {
-  /** URL or path to the fully-grown plant photo, or null if unavailable */
-  fullyGrownPicture: string | null;
-  /** Plant name used as the image alt text for accessibility */
-  plantName: string;
+  /** The full plant object; used to calculate which stage image to show */
+  plant: Plant;
 }
 
-const PlantImage: React.FC<PlantImageProps> = ({
-  fullyGrownPicture,
-  plantName,
-}) => {
+const PlantImage: React.FC<PlantImageProps> = ({ plant }) => {
+  const imageSrc = getGrowthStageImage(plant);
+
   const containerStyle: React.CSSProperties = {
     width: "100%",
     aspectRatio: "1 / 1",
@@ -32,13 +31,11 @@ const PlantImage: React.FC<PlantImageProps> = ({
 
   return (
     <div style={containerStyle}>
-      {fullyGrownPicture ? (
-        <img
-          src={fullyGrownPicture}
-          alt={`Fully grown ${plantName}`}
-          style={{ width: "100%", height: "100%", objectFit: "cover" }}
-        />
-      ) : null}
+      <img
+        src={imageSrc}
+        alt={`${plant.name} growth stage`}
+        style={{ width: "100%", height: "100%", objectFit: "cover" }}
+      />
     </div>
   );
 };
