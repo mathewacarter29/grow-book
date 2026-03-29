@@ -38,6 +38,7 @@ const TOTAL_STAGES = STAGE_IMAGES.length; // 6
 export function getDaysOld(plantDate: Date): number {
   const now = new Date();
   const msPerDay = 1000 * 60 * 60 * 24;
+  console.log(plantDate)
   const diffMs = now.getTime() - plantDate.getTime();
   return Math.max(0, Math.floor(diffMs / msPerDay));
 }
@@ -53,6 +54,7 @@ export function formatPlantDate(date: Date): string {
     year: "numeric",
     month: "long",
     day: "numeric",
+    timeZone: 'UTC'
   });
 }
 

@@ -11,6 +11,7 @@ import React from "react";
 import { type Plant } from "../types/types";
 import { colors, borderRadius, spacing } from "../theme/theme";
 import PlantCard from "./PlantCard";
+import { getDaysOld } from "../utils/plantUtils";
 
 interface CardContainerProps {
   /** The list of plants to render as cards */
@@ -54,9 +55,17 @@ const CardContainer: React.FC<CardContainerProps> = ({ plants }) => {
         }}
       >
         <div className="card-grid">
-          {plants.map((plant) => (
-            <PlantCard key={plant.id} plant={plant} />
-          ))}
+          {plants
+            .sort(
+              (a, b) =>
+                getDaysOld(b.plantDate) -
+                b.daysToFullyGrow -
+                getDaysOld(a.plantDate) -
+                a.daysToFullyGrow,
+            )
+            .map((plant) => (
+              <PlantCard key={plant.id} plant={plant} />
+            ))}
         </div>
       </div>
     </>

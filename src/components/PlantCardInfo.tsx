@@ -53,7 +53,7 @@ const PlantCardInfo: React.FC<PlantCardInfoProps> = ({ plant }) => {
   return (
     <div style={wrapperStyle}>
       <p style={nameStyle}>{plant.name}</p>
-      <p style={subtitleStyle}>{daysOld} Days Old</p>
+      <p style={subtitleStyle}>{`${daysOld} Day${daysOld === 1 ? '' : 's'} Old`}</p>
       <p style={dateStyle}>Planted: {formatPlantDate(plant.plantDate)}</p>
       <p style={dateStyle}>Fully grown in {plant.daysToFullyGrow} days</p>
     </div>
