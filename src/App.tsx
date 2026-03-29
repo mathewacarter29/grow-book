@@ -28,8 +28,8 @@ const App: React.FC = () => {
       {/* Main scrollable content area */}
       <main
         style={{
-          padding: "24px 32px 48px",
-          maxWidth: "1400px",
+          padding: "2vw 3vw 4vw",
+          // maxWidth: "1400px",
           margin: "0 auto",
           boxSizing: "border-box",
         }}

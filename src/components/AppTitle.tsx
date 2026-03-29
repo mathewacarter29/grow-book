@@ -18,7 +18,7 @@ const AppTitle: React.FC = () => {
         top: 0,
         zIndex: 10,
         backgroundColor: colors.background,
-        padding: "24px 0 16px",
+        padding: "2vw 0 1vw",
         textAlign: "center",
         /* Subtle shadow to separate the title from scrolled content */
       }}

@@ -42,6 +42,6 @@ export const borderRadius = {
 } as const;
 
 export const spacing = {
-  cardGap: "24px",
-  containerPadding: "28px",
+  cardGap: "3vw",
+  containerPadding: "3vw",
 } as const;
