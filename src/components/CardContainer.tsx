@@ -58,10 +58,8 @@ const CardContainer: React.FC<CardContainerProps> = ({ plants }) => {
           {plants
             .sort(
               (a, b) =>
-                getDaysOld(b.plantDate) -
-                b.daysToFullyGrow -
-                getDaysOld(a.plantDate) -
-                a.daysToFullyGrow,
+                getDaysOld(b.plantDate) / b.daysToFullyGrow -
+                getDaysOld(a.plantDate) / a.daysToFullyGrow,
             )
             .map((plant) => (
               <PlantCard key={plant.id} plant={plant} />
