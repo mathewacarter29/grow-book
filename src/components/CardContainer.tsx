@@ -8,6 +8,8 @@
  */
 
 import React from "react";
+import { useState } from "react";
+import PlantCardModal from "./PlantCardModal";
 import { type Plant } from "../types/types";
 import { colors, borderRadius, spacing } from "../theme/theme";
 import PlantCard from "./PlantCard";
@@ -19,6 +21,7 @@ interface CardContainerProps {
 }
 
 const CardContainer: React.FC<CardContainerProps> = ({ plants }) => {
+  const [selectedPlant, setSelectedPlant] = useState<Plant | null>(null);
   return (
     <>
       {/*
@@ -62,9 +65,17 @@ const CardContainer: React.FC<CardContainerProps> = ({ plants }) => {
                 getDaysOld(a.plantDate) / a.daysToFullyGrow,
             )
             .map((plant) => (
-              <PlantCard key={plant.id} plant={plant} />
+              <PlantCard
+                key={plant.id}
+                plant={plant}
+                onClick={(p) => setSelectedPlant(p)}
+              />
             ))}
         </div>
+        <PlantCardModal
+          plant={selectedPlant}
+          onClose={() => setSelectedPlant(null)}
+        />
       </div>
     </>
   );

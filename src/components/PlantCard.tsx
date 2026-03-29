@@ -14,11 +14,12 @@ import PlantImage from "./PlantImage";
 import PlantCardInfo from "./PlantCardInfo";
 
 interface PlantCardProps {
-  /** The plant data to display inside this card */
   plant: Plant;
+  /** Called when the card is clicked */
+  onClick: (plant: Plant) => void;
 }
 
-const PlantCard: React.FC<PlantCardProps> = ({ plant }) => {
+const PlantCard: React.FC<PlantCardProps> = ({ plant, onClick }) => {
   const cardStyle: React.CSSProperties = {
     backgroundColor: colors.cardBackground,
     border: `4px solid ${colors.cardBorder}`,
@@ -31,10 +32,11 @@ const PlantCard: React.FC<PlantCardProps> = ({ plant }) => {
     width: "300px",
     flexShrink: 0,
     boxSizing: "border-box",
+    cursor: "pointer",
   };
 
   return (
-    <div style={cardStyle}>
+    <div style={cardStyle} onClick={() => onClick(plant)}>
       <PlantImage plant={plant} />
       <PlantCardInfo plant={plant} />
     </div>
