@@ -9,6 +9,7 @@
 
 import { type Plant } from "../types/types";
 import tomato from "../assets/plants/png/tomato.png";
+import hotPepper from "../assets/plants/png/hot-pepper.png";
 
 /**
  * The master list of plants in the grow book.
@@ -41,7 +42,7 @@ export const PLANTS: Plant[] = [
     name: "Hot Pepper",
     plantDate: new Date("2026-03-28T00:00:00-04:00"),
     daysToFullyGrow: 55,
-    fullyGrownPicture: null,
+    fullyGrownPicture: hotPepper,
   },
   {
     id: "5",
