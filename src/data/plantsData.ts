@@ -13,6 +13,7 @@ import hotPepper from "../assets/plants/png/hot-pepper.png";
 import marigold from "../assets/plants/png/marigold.png";
 import cucumber from "../assets/plants/png/cucumber.png";
 import lettuce from "../assets/plants/png/lettuce.png";
+import radish from "../assets/plants/png/radish.png";
 
 /**
  * The master list of plants in the grow book.
@@ -108,7 +109,7 @@ export const PLANTS: Plant[] = [
     name: "Radish",
     plantDate: new Date("2026-03-29T00:00:00-04:00"),
     daysToFullyGrow: 22,
-    fullyGrownPicture: null,
+    fullyGrownPicture: radish,
   },
   {
     id: "14",
