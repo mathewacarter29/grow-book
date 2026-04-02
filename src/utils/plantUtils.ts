@@ -24,8 +24,6 @@ const STAGE_IMAGES: string[] = [
   plant6,
 ];
 
-const TOTAL_STAGES = STAGE_IMAGES.length;
-
 /**
  * Calculates how many days have elapsed since the plant was planted,
  * relative to the current date.
