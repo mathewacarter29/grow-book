@@ -9,7 +9,6 @@ import { type Plant } from "../types/types";
 
 // -- Stage image imports --
 // Vite resolves these at build time so the paths are always correct.
-import plant1 from '../assets/plants/png/plant1.png'
 import plant2 from "../assets/plants/png/plant2.png";
 import plant3 from "../assets/plants/png/plant3.png";
 import plant4 from "../assets/plants/png/plant4.png";
@@ -18,7 +17,6 @@ import plant6 from "../assets/plants/png/plant6.png";
 
 /** Ordered array of stage images, index 0 = earliest stage. */
 const STAGE_IMAGES: string[] = [
-  plant1,
   plant2,
   plant3,
   plant4,
@@ -26,7 +24,7 @@ const STAGE_IMAGES: string[] = [
   plant6,
 ];
 
-const TOTAL_STAGES = STAGE_IMAGES.length; // 6
+const TOTAL_STAGES = STAGE_IMAGES.length;
 
 /**
  * Calculates how many days have elapsed since the plant was planted,
@@ -73,11 +71,11 @@ export function isFullyGrown(plant: Plant): boolean {
  * Returns the image path that should be shown for a plant based on
  * how far along it is in its growth cycle.
  *
- * Growth is divided into 6 equal stages:
- *   - Stage 1: 0 – 1/6 of daysToFullyGrow  → plant1.png
- *   - Stage 2: 1/6 – 2/6                   → plant2.png
+ * Growth is divided into 5 equal stages:
+ *   - Stage 1: 0 – 1/5 of daysToFullyGrow  → plant2.png
+ *   - Stage 2: 1/5 – 2/5                   → plant3.png
  *   - ...
- *   - Stage 6: 5/6 – fully grown           → plant6.png
+ *   - Stage 5: 5/5 – fully grown           → plant6.png
  *
  * Once the plant IS fully grown:
  *   - If a fullyGrownPicture URL is provided, that is returned.
@@ -98,8 +96,8 @@ export function getGrowthStageImage(plant: Plant): string {
   // progress: a value in [0, 1) representing how far along the plant is.
   const progress = daysOld / plant.daysToFullyGrow;
 
-  // Map progress onto stages 1-6, then convert to a 0-based array index.
-  // Math.ceil maps (0, 1/6] → 1, (1/6, 2/6] → 2, ..., (5/6, 1) → 6.
+  // Map progress onto stages 1-5, then convert to a 0-based array index.
+  // Math.ceil maps (0, 1/5] → 1, (1/5, 2/5] → 2, ..., (4/5, 1) → 5.
   // We clamp to at least 1 so that daysOld === 0 (progress === 0) still
   // shows stage 1 rather than stage 0 (which doesn't exist).
   const stage = Math.max(1, Math.ceil(progress * TOTAL_STAGES));

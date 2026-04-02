@@ -14,6 +14,7 @@ import marigold from "../assets/plants/png/marigold.png";
 import cucumber from "../assets/plants/png/cucumber.png";
 import lettuce from "../assets/plants/png/lettuce.png";
 import radish from "../assets/plants/png/radish.png";
+import echinacea from "../assets/plants/png/echinacea.png";
 
 /**
  * The master list of plants in the grow book.
@@ -53,7 +54,7 @@ export const PLANTS: Plant[] = [
     name: "Echinacea",
     plantDate: new Date("2026-03-28T00:00:00-04:00"),
     daysToFullyGrow: 80,
-    fullyGrownPicture: null,
+    fullyGrownPicture: echinacea,
   },
   {
     id: "6",
