@@ -15,6 +15,7 @@ import cucumber from "../assets/plants/png/cucumber.png";
 import lettuce from "../assets/plants/png/lettuce.png";
 import radish from "../assets/plants/png/radish.png";
 import echinacea from "../assets/plants/png/echinacea.png";
+import basil from "../assets/plants/png/basil.png";
 
 /**
  * The master list of plants in the grow book.
@@ -33,7 +34,7 @@ export const PLANTS: Plant[] = [
     name: "Basil",
     plantDate: new Date("2026-03-28T00:00:00-04:00"),
     daysToFullyGrow: 60,
-    fullyGrownPicture: null,
+    fullyGrownPicture: basil,
   },
   {
     id: "3",
@@ -108,14 +109,14 @@ export const PLANTS: Plant[] = [
   {
     id: "13",
     name: "Radish",
-    plantDate: new Date("2026-03-29T00:00:00-04:00"),
+    plantDate: new Date("2026-04-15T00:00:00-04:00"),
     daysToFullyGrow: 22,
     fullyGrownPicture: radish,
   },
   {
     id: "14",
     name: "Lettuce",
-    plantDate: new Date("2026-03-29T00:00:00-04:00"),
+    plantDate: new Date("2026-04-15T00:00:00-04:00"),
     daysToFullyGrow: 30,
     fullyGrownPicture: lettuce,
   },

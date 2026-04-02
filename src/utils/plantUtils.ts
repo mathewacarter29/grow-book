@@ -86,22 +86,30 @@ export function isFullyGrown(plant: Plant): boolean {
  */
 export function getGrowthStageImage(plant: Plant): string {
   const daysOld = getDaysOld(plant.plantDate);
-
+  if (daysOld < 3) {
+    // For the first 3 days, show seed
+    return STAGE_IMAGES[0];
+  }
+  if (daysOld >= 3 && daysOld < plant.daysToFullyGrow / 4) {
+    return STAGE_IMAGES[1];
+  }
+  const daysLeft = daysOld - plant.daysToFullyGrow / 4;
+  const plantImages = STAGE_IMAGES.slice(1);
   // If the plant has reached or passed its full-growth threshold,
   // prefer the custom fullyGrownPicture; fall back to the last stage.
-  if (daysOld >= plant.daysToFullyGrow) {
-    return plant.fullyGrownPicture ?? STAGE_IMAGES[TOTAL_STAGES - 1];
+  if (daysLeft >= plant.daysToFullyGrow) {
+    return plant.fullyGrownPicture ?? plantImages[plantImages.length - 1];
   }
 
   // progress: a value in [0, 1) representing how far along the plant is.
-  const progress = daysOld / plant.daysToFullyGrow;
+  const progress = daysLeft / (plant.daysToFullyGrow - daysLeft);
 
   // Map progress onto stages 1-5, then convert to a 0-based array index.
   // Math.ceil maps (0, 1/5] → 1, (1/5, 2/5] → 2, ..., (4/5, 1) → 5.
   // We clamp to at least 1 so that daysOld === 0 (progress === 0) still
   // shows stage 1 rather than stage 0 (which doesn't exist).
-  const stage = Math.max(1, Math.ceil(progress * TOTAL_STAGES));
+  const stage = Math.max(1, Math.ceil(progress * plantImages.length));
   const index = stage - 1; // convert to 0-based
 
-  return STAGE_IMAGES[index];
+  return plantImages[index];
 }
