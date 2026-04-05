@@ -19,6 +19,8 @@ import basil from "../assets/plants/png/basil.png";
 import greenBean from "../assets/plants/png/green-bean.png";
 import dill from "../assets/plants/png/dill.png";
 import cilantro from "../assets/plants/png/cilantro.png";
+import oregano from "../assets/plants/png/oregano.png";
+import thyme from "../assets/plants/png/thyme.png";
 
 /**
  * The master list of plants in the grow book.
@@ -65,14 +67,14 @@ export const PLANTS: Plant[] = [
     name: "Thyme",
     plantDate: new Date("2026-03-28T00:00:00-04:00"),
     daysToFullyGrow: 180,
-    fullyGrownPicture: null,
+    fullyGrownPicture: thyme,
   },
   {
     id: "7",
     name: "Oregano",
     plantDate: new Date("2026-03-28T00:00:00-04:00"),
     daysToFullyGrow: 90,
-    fullyGrownPicture: null,
+    fullyGrownPicture: oregano,
   },
   {
     id: "8",
