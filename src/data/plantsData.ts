@@ -16,6 +16,9 @@ import lettuce from "../assets/plants/png/lettuce.png";
 import radish from "../assets/plants/png/radish.png";
 import echinacea from "../assets/plants/png/echinacea.png";
 import basil from "../assets/plants/png/basil.png";
+import greenBean from "../assets/plants/png/green-bean.png";
+import dill from "../assets/plants/png/dill.png";
+import cilantro from "../assets/plants/png/cilantro.png";
 
 /**
  * The master list of plants in the grow book.
@@ -76,7 +79,7 @@ export const PLANTS: Plant[] = [
     name: "Green Bean",
     plantDate: new Date("2026-03-28T00:00:00-04:00"),
     daysToFullyGrow: 50,
-    fullyGrownPicture: null,
+    fullyGrownPicture: greenBean,
   },
   {
     id: "9",
@@ -90,7 +93,7 @@ export const PLANTS: Plant[] = [
     name: "Dill",
     plantDate: new Date("2026-03-28T00:00:00-04:00"),
     daysToFullyGrow: 40,
-    fullyGrownPicture: null,
+    fullyGrownPicture: dill,
   },
   {
     id: "11",
@@ -104,7 +107,7 @@ export const PLANTS: Plant[] = [
     name: "Cilantro",
     plantDate: new Date("2026-03-28T00:00:00-04:00"),
     daysToFullyGrow: 60,
-    fullyGrownPicture: null,
+    fullyGrownPicture: cilantro,
   },
   {
     id: "13",
