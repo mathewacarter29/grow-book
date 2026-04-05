@@ -21,6 +21,7 @@ import dill from "../assets/plants/png/dill.png";
 import cilantro from "../assets/plants/png/cilantro.png";
 import oregano from "../assets/plants/png/oregano.png";
 import thyme from "../assets/plants/png/thyme.png";
+import nasturtium from "../assets/plants/png/nasturtium.png";
 
 /**
  * The master list of plants in the grow book.
@@ -88,7 +89,7 @@ export const PLANTS: Plant[] = [
     name: "Nasturtium",
     plantDate: new Date("2026-03-28T00:00:00-04:00"),
     daysToFullyGrow: 60,
-    fullyGrownPicture: null,
+    fullyGrownPicture: nasturtium,
   },
   {
     id: "10",
